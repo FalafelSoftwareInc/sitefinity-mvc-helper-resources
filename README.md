@@ -1,7 +1,8 @@
 Include CSS and JavaScript Resources in Sitefinity MVC Widgets
 ==============================================================
 
-Sitefinity MVC helper for adding scripts and stylesheets to the page.
+Sitefinity MVC helper for adding scripts and stylesheets to the page:
+http://blog.falafel.com/Blogs/basem-emara/2014/04/16/include-css-and-javascript-resources-in-sitefinity-mvc-widgets
 
 *Instructions:*
 
