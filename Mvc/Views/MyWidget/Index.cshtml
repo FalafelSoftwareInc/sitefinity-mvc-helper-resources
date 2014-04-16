@@ -1,0 +1,41 @@
+@model SitefinityWebApp.Mvc.Models.MyWidgetModel
+@using SitefinityWebApp.Mvc.Helpers
+
+@{
+    Html.AddScriptReference(Telerik.Sitefinity.Modules.Pages.ScriptRef.JQuery);
+    Html.AddScriptReference(Telerik.Sitefinity.Modules.Pages.ScriptRef.KendoWeb);
+    Html.AddCssResource("Telerik.Sitefinity.Resources.Scripts.Kendo.styles.kendo_common_min.css");
+    Html.AddCssResource("Telerik.Sitefinity.Resources.Scripts.Kendo.styles.kendo_default_min.css");
+
+    //OPTIONAL VARIATIONS OF ADDING SCRIPTS AND STYLES
+    //Html.AddCssFile("http://somedomainx.com/outthere.css");
+    //Html.AddCssFile("~/mycustomstyles.css");
+    //Html.AddScriptFile("~/mycustomscript.js");
+    //Html.AddScriptFile("http://somedomainx.com/overtherainbow.js", true); //ADD TO PAGE HEAD
+    //Html.AddScriptResource("MyPlace.Sitefinity.Web.Scripts.sitefinityhelpers.js");
+}
+
+<div id="mywidget">
+    <div data-role="grid"
+         data-columns="[
+            { 'field': 'ID' },
+            { 'field': 'Name'},
+            { 'field': 'Desc', 'title': 'Description' }
+         ]"
+         data-bind="source: sourceDummy">
+    </div>
+</div>
+
+<script>
+    (function () {
+        var viewModel = kendo.observable({
+            sourceDummy: [
+                { ID: '1', Name: 'A', Desc: 'Desc1' },
+                { ID: '2', Name: 'B', Desc: 'Desc2' },
+                { ID: '3', Name: 'C', Desc: 'Desc3' },
+                ]
+        });
+
+        kendo.bind('#mywidget', viewModel);
+    })();
+</script>
